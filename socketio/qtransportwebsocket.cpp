@@ -17,12 +17,14 @@ QTransportWebSocket::~QTransportWebSocket()
 
 bool QTransportWebSocket::doOpen()
 {
-    return m_pWebSocket->open(m_requestUrl);
+    m_pWebSocket->open(m_requestUrl);
+    return true;
 }
 
 bool QTransportWebSocket::doClose()
 {
-    return m_pWebSocket->close();
+    m_pWebSocket->close();
+    return true;
 }
 
 qint64 QTransportWebSocket::doSendTextMessage(const QString &message)
